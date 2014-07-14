@@ -18,6 +18,9 @@ company	machineid	ovcid
 1	327890	90
 # These machine ID/ovcid combinations seem to overlap with GVB?
 # Are the same buses used for different bus companies?
+# 1	1255570	19543
+# 1	1255572	19543
+# 1	1255593	19543
 # 1	1255601	21523
 1	1255622	21499
 # 1	1255624	21499
