@@ -31,9 +31,9 @@ def lookup_machineid(machineid):
 	global con
 	cur = con.cursor()
 	cur.execute('SELECT * FROM machines_data WHERE machineid=?', (machineid,))
-	row = cur.fetchone()
-	if not row: return False
-	return row
+	rows = cur.fetchall()
+	if not rows: return False
+	return rows
 
 def lookup_ovcid(name):
 	'''return station number by name'''
@@ -90,7 +90,8 @@ if __name__ == '__main__':
 	    if found == False:
 		printit = True
 	    else:
-		(old_company_id, dummy, old_ovcid, dummy) = found
+		# TODO: process the whole set
+		(old_company_id, dummy, old_ovcid, dummy) = found[0]
 		if old_company_id != company_id:
 		    printit = True
 		    print "# company mismatch: %d" % old_company_id
